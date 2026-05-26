@@ -50,6 +50,6 @@
 	default = simple
 [user]
 	name = Vincent Jadraque
-	email = vincent.jadraque@gmail.com
+	email = vincent.jadraque@dfcrc.com
 [stash]
 	showIncludeUntracked = true
