@@ -1,0 +1,54 @@
+[alias]
+	ap = add -p
+	br = branch
+	cm = commit -m
+	ca = commit --amend
+	cam = commit --amend -m
+	can = commit --amend --no-edit
+	cf = commit --fixup
+	cnvm = commit --no-verify -m
+	cs = commit --squash
+	co = checkout
+	cob = checkout -b
+	cp = cherry-pick
+	cpa = cherry-pick --abort
+	cpc = cherry-pick --continue
+	cpn = cherry-pick --no-commit
+	d = diff
+	ds = diff --staged
+	dwd = diff --word-diff
+	f = fetch
+	fp = fetch --prune
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	lgd = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative -n 12 --all
+	lgn = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --all -n
+	lga = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --all
+	lgl = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --branches
+	lgm = "!f() { git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative \"HEAD\" \"main\" --boundary $(git merge-base \"HEAD\" \"main\")^..;}; f"
+	diverged = "!f() { git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative \"$1\" \"$2\" --boundary $(git merge-base \"$1\" \"$2\")^..; }; f"
+	rb = rebase
+	rba = rebase --abort
+	rbc = rebase --continue
+	rbi = rebase -i
+	rbo = rebase --onto
+	rbs = rebase --skip
+	# https://github.com/git/git/blob/076c05393a047247ea723896289b48d6549ed7d0/ref-filter.c#L180
+	recent = for-each-ref --sort=-committerdate --format='%(committerdate:iso) %(refname:short)' refs/heads
+	s = status
+	sc = switch -c
+	sw = switch
+	wt = worktree
+	wta = worktree add
+	wtr = worktree remove
+	cfgg = config --global
+[core]
+	excludesfile = ~/.gitignore_global
+	pager = less -F -X
+[rebase]
+	autosquash = true
+[push]
+	default = simple
+[user]
+	name = Vincent Jadraque
+[stash]
+	showIncludeUntracked = true
