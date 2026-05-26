@@ -1,0 +1,84 @@
+{
+  "telemetry.telemetryLevel": "off",
+  "hardhat.telemetry": false,
+  "terminal.integrated.fontFamily": "Hack Nerd Font",
+  "files.associations": {
+    ".env": "env",
+    "*.circom": "rust",
+    "*.yml": "yaml"
+  },
+  "gitlens.telemetry.enabled": false,
+  "workbench.settings.applyToAllProfiles": [
+    "gitlens.telemetry.enabled",
+    "redhat.telemetry.enabled",
+    "solidity.telemetry"
+  ],
+  "black-formatter.path": ["black"],
+  "black-formatter.args": ["--preview"],
+  "cSpell.language": "en,en-AU",
+  "editor.unicodeHighlight.invisibleCharacters": false,
+  "gitlens.launchpad.indicator.enabled": false,
+  "cSpell.spellCheckOnlyWorkspaceFiles": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[shellscript]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  },
+  "diffEditor.renderSideBySide": false,
+  "[markdown]": {
+    "diffEditor.ignoreTrimWhitespace": true
+  },
+  "workbench.editor.enablePreview": false,
+  "markdown.extension.tableFormatter.enabled": false,
+  "editor.formatOnSave": true,
+  "markdownlint.config": {
+    "MD024": false
+  },
+  "[dockercompose]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.autoIndent": "advanced",
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": false,
+      "strings": true
+    },
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "[github-actions-workflow]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "docker.extension.enableComposeLanguageServer": false,
+  "[dockerfile]": {
+    "editor.defaultFormatter": "ms-azuretools.vscode-containers"
+  },
+  "[terraform]": {
+    "editor.defaultFormatter": "hashicorp.terraform"
+  },
+  "[terraform-vars]": {
+    "editor.defaultFormatter": "hashicorp.terraform"
+  },
+  "[ignore]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "[dotenv]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "chat.mcp.gallery.enabled": true,
+  "github.copilot.enable": {
+    "*": false
+  },
+  "gitlens.ai.model": "vscode",
+  "gitlens.ai.vscode.model": "copilot:gpt-4.1",
+  "[latex]": {
+    "editor.defaultFormatter": "James-Yu.latex-workshop"
+  },
+  "latex-workshop.formatting.latex": "latexindent",
+  "claudeCode.preferredLocation": "panel",
+  "chat.viewSessions.orientation": "stacked",
+  "workbench.editorAssociations": {
+    "git-rebase-todo": "default"
+  }
+}
