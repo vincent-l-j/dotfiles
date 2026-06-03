@@ -7,6 +7,10 @@ VSCODE="$HOME/Library/Application Support/Code/User"
 # Back up an existing file/symlink to <path>.bak, then symlink it to the source.
 backup_and_link() {
   local src="$1" dest="$2"
+  if [ "$(readlink "$dest")" = "$src" ]; then
+    echo "Already linked: $dest"
+    return
+  fi
   if [ -e "$dest" ] || [ -L "$dest" ]; then
     mv "$dest" "$dest.bak"
   fi
