@@ -13,6 +13,7 @@ backup_and_link() {
   fi
   if [ -e "$dest" ] || [ -L "$dest" ]; then
     mv "$dest" "$dest.bak"
+    echo "Backed up: $dest -> $dest.bak"
   fi
   ln -sf "$src" "$dest"
 }
@@ -29,4 +30,4 @@ done
 backup_and_link "$DOTFILES/aliases.zsh" "$HOME/.oh-my-zsh/custom/aliases.zsh"
 backup_and_link "$DOTFILES/vscode/settings.json" "$VSCODE/settings.json"
 
-echo "Done. Existing files backed up with .bak extension."
+echo "Done."
