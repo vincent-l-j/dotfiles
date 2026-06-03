@@ -21,6 +21,7 @@ backup_and_link() {
 FILES=(
   ".gitconfig"
   ".gitignore_global"
+  ".vimrc"
 )
 
 for f in "${FILES[@]}"; do
