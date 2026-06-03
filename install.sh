@@ -16,6 +16,7 @@ backup_and_link() {
     echo "Backed up: $dest -> $dest.bak"
   fi
   ln -sf "$src" "$dest"
+  echo "Linked: $dest"
 }
 
 FILES=(
