@@ -23,13 +23,13 @@ FILES=(
   ".gitconfig"
   ".gitignore_global"
   ".vimrc"
+  ".aliases.zsh"
 )
 
 for f in "${FILES[@]}"; do
   backup_and_link "$DOTFILES/$f" "$HOME/$f"
 done
 
-backup_and_link "$DOTFILES/aliases.zsh" "$HOME/.oh-my-zsh/custom/aliases.zsh"
 backup_and_link "$DOTFILES/vscode/settings.json" "$VSCODE/settings.json"
 
 echo "Done."
