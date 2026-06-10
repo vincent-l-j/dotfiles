@@ -24,6 +24,7 @@ FILES=(
   ".gitignore_global"
   ".vimrc"
   ".aliases.zsh"
+  ".config/starship.toml"
 )
 
 for f in "${FILES[@]}"; do
