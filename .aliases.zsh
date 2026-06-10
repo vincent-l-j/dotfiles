@@ -1,4 +1,5 @@
 alias g='git'
+alias pm='podman'
 alias config='/usr/bin/git --git-dir=~/.cfg/.git/ --work-tree=~/'
 alias tf='terraform'
 # hack xargs to read aliases
