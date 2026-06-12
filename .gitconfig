@@ -53,3 +53,5 @@
 	email = vincent.jadraque@gmail.com
 [stash]
 	showIncludeUntracked = true
+[safe]
+	directory = /opt/homebrew
