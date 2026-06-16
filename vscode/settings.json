@@ -80,5 +80,6 @@
   "chat.viewSessions.orientation": "stacked",
   "workbench.editorAssociations": {
     "git-rebase-todo": "default"
-  }
+  },
+  "dotfiles.repository": "vincent-l-j/dotfiles"
 }
