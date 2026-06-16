@@ -81,5 +81,6 @@
   "workbench.editorAssociations": {
     "git-rebase-todo": "default"
   },
+  "dev.containers.dockerPath": "podman",
   "dotfiles.repository": "vincent-l-j/dotfiles"
 }
