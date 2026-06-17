@@ -2,7 +2,8 @@
 set -e
 
 DOTFILES="$HOME/dotfiles"
-VSCODE="$HOME/Library/Application Support/Code/User"
+OS=$(uname -s)
+SHELL_NAME=$(basename "$SHELL")
 
 # Back up an existing file/symlink to <path>.bak, then symlink it to the source.
 backup_and_link() {
@@ -23,7 +24,6 @@ FILES=(
   ".gitconfig"
   ".gitignore_global"
   ".vimrc"
-  ".aliases.zsh"
   ".config/starship.toml"
 )
 
@@ -31,6 +31,30 @@ for f in "${FILES[@]}"; do
   backup_and_link "$DOTFILES/$f" "$HOME/$f"
 done
 
-backup_and_link "$DOTFILES/vscode/settings.json" "$VSCODE/settings.json"
+# VS Code settings — path differs by OS, skip if not installed
+case "$OS" in
+  Darwin) VSCODE="$HOME/Library/Application Support/Code/User" ;;
+  Linux)  VSCODE="$HOME/.config/Code/User" ;;
+esac
+if [ -n "$VSCODE" ] && [ -d "$(dirname "$VSCODE")" ]; then
+  backup_and_link "$DOTFILES/vscode/settings.json" "$VSCODE/settings.json"
+fi
+
+# Append a source line to the shell config — idempotent
+SOURCE_LINE="source \"$DOTFILES/.aliases.zsh\""
+case "$SHELL_NAME" in
+  zsh)  SHELL_RC="$HOME/.zshrc" ;;
+  bash) SHELL_RC="$HOME/.bashrc" ;;
+  *)    SHELL_RC="" ;;
+esac
+
+if [ -n "$SHELL_RC" ] && ! grep -qE '^\s*source\s+.*\.aliases\.zsh' "$SHELL_RC" 2>/dev/null; then
+  echo "" >> "$SHELL_RC"
+  echo "# dotfiles" >> "$SHELL_RC"
+  echo "$SOURCE_LINE" >> "$SHELL_RC"
+  echo "Added to $SHELL_RC"
+elif [ -n "$SHELL_RC" ]; then
+  echo "Already sourced in $SHELL_RC"
+fi
 
 echo "Done."
