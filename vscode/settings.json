@@ -82,5 +82,6 @@
     "git-rebase-todo": "default"
   },
   "dev.containers.dockerPath": "podman",
+  "git.useEditorAsCommitInput": false,
   "dotfiles.repository": "vincent-l-j/dotfiles"
 }
