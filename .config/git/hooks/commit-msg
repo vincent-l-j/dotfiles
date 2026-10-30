@@ -1,0 +1,9 @@
+#!/bin/sh
+
+COMMIT_MSG_FILE=$1
+
+# Remove lines mentioning common AI tools from Co-authored-by commit trailers
+perl -i -ne 'print unless /^[Cc]o-authored-by:.*(Claude|Copilot|Cursor|AI|Anthropic|GitHub)/' "$COMMIT_MSG_FILE"
+
+# Clean up trailing blank lines if the deletion left any behind
+perl -i -pe 's/\n+$/\n/' "$COMMIT_MSG_FILE"

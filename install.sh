@@ -25,7 +25,10 @@ FILES=(
   ".gitignore_global"
   ".vimrc"
   ".config/starship.toml"
+  ".config/git/hooks/commit-msg"
 )
+
+mkdir -p "$HOME/.config/git/hooks/"
 
 for f in "${FILES[@]}"; do
   backup_and_link "$DOTFILES/$f" "$HOME/$f"
